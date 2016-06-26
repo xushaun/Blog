@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -99,7 +99,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -309,8 +309,7 @@
         
           
             <h1 id="主流直播平台初步分析"><a href="#主流直播平台初步分析" class="headerlink" title="主流直播平台初步分析"></a>主流直播平台初步分析</h1><p><strong>直播APP大致需求：</strong><br><strong><em>类似映客，花椒主流直播平台</em></strong></p>
-<p>##直播技术难题</p>
-<p><strong>视频直播</strong>，可以分为 <strong>采集，前处理，编码，传输，解码，渲染 这几个环节：</strong></p>
+<h2 id="直播技术难题"><a href="#直播技术难题" class="headerlink" title="直播技术难题"></a>直播技术难题</h2><p><strong>视频直播</strong>，可以分为 <strong>采集，前处理，编码，传输，解码，渲染 这几个环节：</strong></p>
 <ul>
 <li><p><strong>采集</strong>，IOS是比较简单的，Android则要做些机型适配工作，PC最麻烦各种奇葩摄像头驱动，出了问题特别不好处理，建议放弃PC只支持手机主播，<strong>目前几个新进的直播平台都是这样的</strong>。</p>
 </li>
@@ -326,43 +325,34 @@
 </li>
 </ul>
 <p>此外音频还有几个难点需要解决，比如降噪，音频编码器的选择，各种蓝牙耳机，各种播放模式的适配等，<strong>综上所述自己做直播平台并不现实，所以如果需要做的话需要采用第三方服务平台</strong></p>
-<p>##直播平台功能分析</p>
-<ul>
+<h2 id="直播平台功能分析"><a href="#直播平台功能分析" class="headerlink" title="直播平台功能分析"></a>直播平台功能分析</h2><ul>
 <li><strong>PC、Android、iOS三大平台</strong></li>
 <li><strong>每个平台要做2种端：面向客户的直播端，和面向主播的推流端</strong></li>
 <li><strong>完整的礼物系统、支付系统、运营系统、统计系统等</strong></li>
 <li><strong>即时聊天IM服务（弹幕，既要保证实时性，又要抗住高并发）</strong></li>
 </ul>
-<p>##主流直播平台分析</p>
-<p>###腾讯云</p>
-<p>####<a href="https://www.qcloud.com/doc/product/267/2823" target="_blank" rel="external"><strong>腾讯云</strong></a>目前支持的直播模式:</p>
-<ul>
+<h2 id="主流直播平台分析"><a href="#主流直播平台分析" class="headerlink" title="主流直播平台分析"></a>主流直播平台分析</h2><h3 id="腾讯云"><a href="#腾讯云" class="headerlink" title="腾讯云"></a>腾讯云</h3><h4 id="腾讯云目前支持的直播模式"><a href="#腾讯云目前支持的直播模式" class="headerlink" title="腾讯云目前支持的直播模式:"></a><a href="https://www.qcloud.com/doc/product/267/2823" target="_blank" rel="external"><strong>腾讯云</strong></a>目前支持的直播模式:</h4><ul>
 <li><strong>PC：不支持</strong></li>
 <li><strong>移动端，支持IOS和Android的收看和直播</strong></li>
 <li><strong>有相关的直播控制后台(不包含礼物，支付等系统)</strong></li>
 </ul>
-<p>####价格：<br><a href="https://www.qcloud.com/doc/product/267/2818" target="_blank" rel="external">参考腾讯云计费方式</a></p>
-<p>####特点<br>有相关的交互IM通讯功能，提供基于文本、图片的即时通信功能，丰富直播交互场景</p>
-<p>###趣拍</p>
-<p>####<a href="https://www.qupaicloud.com" target="_blank" rel="external"><strong>趣拍</strong></a>目前支持的直播模式:</p>
-<ul>
+<h4 id="价格："><a href="#价格：" class="headerlink" title="价格："></a>价格：</h4><p><a href="https://www.qcloud.com/doc/product/267/2818" target="_blank" rel="external">参考腾讯云计费方式</a></p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>有相关的交互IM通讯功能，提供基于文本、图片的即时通信功能，丰富直播交互场景</p>
+<h3 id="趣拍"><a href="#趣拍" class="headerlink" title="趣拍"></a>趣拍</h3><h4 id="趣拍目前支持的直播模式"><a href="#趣拍目前支持的直播模式" class="headerlink" title="趣拍目前支持的直播模式:"></a><a href="https://www.qupaicloud.com" target="_blank" rel="external"><strong>趣拍</strong></a>目前支持的直播模式:</h4><ul>
 <li><strong>PC：不支持</strong></li>
 <li><strong>移动端，支持IOS和Android的收看和直播</strong></li>
 <li><strong>有相关的直播控制后台(不包含礼物，支付等系统)</strong></li>
 </ul>
-<p>####价格：<br>参考趣拍计费方式</p>
-<p>####特点<br>阿里合作，使用阿里的云存储功能，应该相比其他平台比较稳定</p>
-<p>###百度直播</p>
-<p>####<a href="https://bce.baidu.com/doc/LSS/index.html?from=productToDoc" target="_blank" rel="external"><strong>百度直播</strong></a>目前支持的直播模式:</p>
-<ul>
+<h4 id="价格：-1"><a href="#价格：-1" class="headerlink" title="价格："></a>价格：</h4><p>参考趣拍计费方式</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>阿里合作，使用阿里的云存储功能，应该相比其他平台比较稳定</p>
+<h3 id="百度直播"><a href="#百度直播" class="headerlink" title="百度直播"></a>百度直播</h3><h4 id="百度直播目前支持的直播模式"><a href="#百度直播目前支持的直播模式" class="headerlink" title="百度直播目前支持的直播模式:"></a><a href="https://bce.baidu.com/doc/LSS/index.html?from=productToDoc" target="_blank" rel="external"><strong>百度直播</strong></a>目前支持的直播模式:</h4><ul>
 <li><strong>PC：支持</strong></li>
 <li><strong>移动端，支持IOS和Android的收看和直播</strong></li>
 <li><strong>有相关的直播控制后台(不包含礼物，支付等系统)</strong></li>
 </ul>
-<p>####价格：<br><a href="https://bce.baidu.com/doc/LSS/Pricing.html" target="_blank" rel="external">参考百度计费方式</a></p>
-<p>####特点<br>支持PC,Android，IOS等多个平台</p>
-<p>###总结</p>
-<ol>
+<h4 id="价格：-2"><a href="#价格：-2" class="headerlink" title="价格："></a>价格：</h4><p><a href="https://bce.baidu.com/doc/LSS/Pricing.html" target="_blank" rel="external">参考百度计费方式</a></p>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>支持PC,Android，IOS等多个平台</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
 <li><strong>以上所比较的平台只是部分平台的直播技术，基于时间有限，也只是做基本比较，我所要说明的是目前比较火的直播平台都是自己研发开源技术，进行改造</strong></li>
 <li><strong>直播的带宽费用不低，带宽费用问题，请参考欢聚时代15年四季度财报，带宽成本为人民币1.611亿元，折合每月5000+万，当然不能用这个数去推算在线人数，因为YY采购量很大所以带宽平均成本低。总之带宽非常贵</strong></li>
 </ol>
@@ -371,7 +361,7 @@
 <li>当我们接入了直播平台，他只是帮你解决了直播功能的一部分，另外的支付系统，礼物系统，运营系统，统计系统，等级系统和相关的后台系统，都是需要自己开发完成</li>
 <li>你以为开发完了这些，你所花的费用就完结了，你太天真了，真正的大笔资金投入才刚开始，在线播放带宽成本,具体参考上面我所写的，运营投入推广这些都是需要大笔资金的，</li>
 </ul>
-<p><strong><em>如果你考虑好了这些事情还是决定要做直播APP，那就DO IT</em></strong></p>
+<p><strong><em>如果你考虑好了这些事情还是决定要做直播APP，那就 JUST DO IT</em></strong></p>
 
           
         
@@ -1084,7 +1074,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
